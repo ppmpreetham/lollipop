@@ -20,14 +20,14 @@ def video_to_rgb(video_path, pixelHeight=30):
         if not ret:
             break
 
-        # MOSIAIC VIDEO DOWN
+        # MOSAIC VIDEO DOWN
         small = cv2.resize(frame, (widthBlocks, pixelHeight), interpolation=cv2.INTER_LINEAR)
 
+        # Convert to RGB and append to the list
         small_rgb = cv2.cvtColor(small, cv2.COLOR_BGR2RGB)
-        rgb_values = small_rgb.reshape(-1, 3)  # shape: (num_pixels, 3)
-        rgb_frames.append(rgb_values)
+        rgb_frames.append(small_rgb)
 
-        # AND Show pixelated video
+        # Show pixelated video
         pixelated = cv2.resize(small, (videoWidth, videoHeight), interpolation=cv2.INTER_NEAREST)
         cv2.imshow('Pixelated', pixelated)
 
@@ -36,4 +36,12 @@ def video_to_rgb(video_path, pixelHeight=30):
 
     cap.release()
     cv2.destroyAllWindows()
-    return rgb_frames
+
+    print(len(rgb_frames), "frames processed.") # RGB
+
+    # NUMBER OF ROWS
+    print("Number of rows:", len(rgb_frames[0]))
+
+    # NUMBER OF COLUMNS
+    print("Number of columns:", len(rgb_frames[0][0]))
+    return np.array(rgb_frames)
