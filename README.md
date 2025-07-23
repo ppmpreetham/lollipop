@@ -11,3 +11,28 @@ $$
 
 where `screenHeight` is the height of the screen in pixels, and `n` is the number of blocks you want to use for the height of the video.
 The app reads the video file, processes each frame, and generates a text representation of the video content using the `█` character to represent pixels. The output can be used as subtitles or captions for the video.
+
+The `dfxp` file format is used to store the generated subtitles. It not only stores the subtitles, but also the `position` and `color` of the subtitles. 
+- `position` is calculated based on the width and height of the video
+- `color` is determined by the average color of the pixels in each block through mosaicization
+
+## Usage
+To use Lollipop, follow these steps:
+
+1. Install the required dependencies.
+   ```bash
+   uv install -r requirements.txt
+   ```
+   Ensure you have Python 3.8 or higher installed.
+
+2. Run the application with the video file as input.
+3. Configure the output settings (e.g., subtitle format, resolution).
+4. Start the conversion process.
+5. Retrieve the generated subtitles from the output directory.
+
+## Contributing
+Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
+But the current issues we're facing are:
+
+[ ] Right format of the dfxp file to support the color
+[ ] Improve video processing speed
