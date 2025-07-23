@@ -4,6 +4,15 @@ import numpy as np
 def width_blocks_finder(videoHeight: int = 30, videoWidth: int = 30, heightBlocks: int = 30) -> int:
     return int((videoWidth * heightBlocks) / (videoHeight * 0.55))
 
+def fps(video_path: str) -> int:
+    cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        raise ValueError("Could not open video.")
+    
+    fps_value = cap.get(cv2.CAP_PROP_FPS)
+    cap.release()
+    return int(fps_value)
+
 def video_to_rgb(video_path, pixelHeight=30):
     cap = cv2.VideoCapture(video_path)
     rgb_frames = []
