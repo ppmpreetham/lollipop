@@ -1,14 +1,31 @@
 from video_hex import video_to_rgb
 import numpy as np
 
-def appendColor(hex):
-    return f"&lt;font color=&quot;#{hex}&quot;&gt;█&lt;/font&gt;"
+def appendColor(hex: str, count: int) -> str:
+    chars = "█" * count
+    return f"&lt;font color=&quot;#{hex}&quot;&gt;{chars}&lt;/font&gt;"
 
 def makeRow(start: float, dur: float, hex_list: list[str]) -> str:
+    if not hex_list:
+        return ""
+
     row = [f'<text start="{start}" dur="{dur}">']
-    row.append(''.join(appendColor(h) for h in hex_list))
-    row.append('</text>')
+
+    prev = hex_list[0]
+    count = 1
+
+    for curr in hex_list[1:]:
+        if curr == prev:
+            count += 1
+        else:
+            row.append(appendColor(prev, count))
+            prev = curr
+            count = 1
+    row.append(appendColor(prev, count))
+
+    row.append("</text>")
     return ''.join(row)
+
 
 # hexes = [
 #     "464037", "433C33", "413B32", "403930", "41392F", "40382D",
