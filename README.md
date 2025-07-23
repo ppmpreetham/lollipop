@@ -7,7 +7,7 @@ For a video, the max blocks for height one can have is n `(preferably 30)` while
 
 
 $$
-\text{width\Blocks} = \frac{W \cdot n}{0.55 \cdot \text{screen\Height}}
+\text{widthBlocks} = \frac{W \cdot n}{0.55 \cdot \text{screenHeight}}
 $$
 
 where `screen_Height` is the height of the screen in pixels, and `n` is the number of blocks you want to use for the height of the video.
