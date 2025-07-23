@@ -4,8 +4,8 @@ An Open Source app which converts videos to subtitles/captions. This is specific
 ## How does it work?
 The `█` character is used to represent a pixel in the video, with a ratio of `0.55 : 1`.
 For a video, the max blocks for height one can have is n `(preferably 30)` while the width can be as large as needed. It's calculated as follows:
+
 ```
-```latex
 $$
 \text{width\_blocks} = \frac{W \cdot n}{0.55 \cdot \text{screen\_height}}
 $$
