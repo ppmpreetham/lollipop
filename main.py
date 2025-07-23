@@ -1,5 +1,5 @@
-from caption_maker import caption_maker
-from video_hex import width_blocks_finder, video_to_rgb, fps
+from src.caption_maker import caption_maker
+from src.video_hex import width_blocks_finder, video_to_rgb, fps
 
 def main():
     FILE_NAME = "tests/BatMobile.mp4"

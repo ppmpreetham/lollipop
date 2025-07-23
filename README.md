@@ -1,8 +1,17 @@
 # Lollipop
-An Open Source app which converts videos to subtitles/captions. This is specifically aimed for videos for YouTube, but can be used for any video.
+An Open Source Script that converts videos to subtitles/captions. This is specifically aimed for videos for YouTube, but can be used for any video.
+Inspired by [this video](https://www.youtube.com/watch?v=LPrTdT8HedU) by Ubonga.
 
+| Before | After |
+|--------|-------|
+| ![Before](README/before.png) | ![After](README/after.png) |
+
+> [!IMPORTANT]  
+> Colors don't work yet for `YouTube`, but the position of the subtitles is correct.
+ 
 ## How does it work?
-The `█` character is used to represent a pixel in the video, with a ratio of `0.55 : 1`.
+The `█` character is used to represent a pixel in the video, with a ratio of `0.55 : 1` for the [Roboto](https://fonts.google.com/specimen/Roboto) font that YouTube uses on it's browser.
+
 For a video, the max blocks for height one can have is n `(preferably 30)` while the width can be as large as needed. It's calculated as follows:
 
 $$
