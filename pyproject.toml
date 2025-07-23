@@ -1,7 +1,11 @@
 [project]
 name = "lollipop"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.1.1"
+description = " 🍭 Embed your videos inside of Subtitles/Captions (HELL YEAH) "
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "numpy>=2.3.1",
+    "opencv-python>=4.11.0.86",
+    "pycaption>=2.2.16",
+]
