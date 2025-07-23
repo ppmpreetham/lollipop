@@ -7,8 +7,8 @@ For a video, the max blocks for height one can have is n `(preferably 30)` while
 
 
 $$
-\text{width\_blocks} = \frac{W \cdot n}{0.55 \cdot \text{screen\_height}}
+\text{width\Blocks} = \frac{W \cdot n}{0.55 \cdot \text{screen\Height}}
 $$
 
-where `screen_height` is the height of the screen in pixels, and `n` is the number of blocks you want to use for the height of the video.
+where `screen_Height` is the height of the screen in pixels, and `n` is the number of blocks you want to use for the height of the video.
 The app reads the video file, processes each frame, and generates a text representation of the video content using the `█` character to represent pixels. The output can be used as subtitles or captions for the video.
